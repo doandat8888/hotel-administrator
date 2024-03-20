@@ -2,7 +2,6 @@ import Logo from '../common/Logo'
 import MenuItem from '../menu/MenuItem'
 import consts from '../../consts'
 import { AiOutlineLogout } from "react-icons/ai";
-import { useAuthStore, useUserStore } from '../../stores/useUserStore';
 import { useNavigate } from 'react-router';
 
 interface Props {
@@ -14,8 +13,7 @@ const SideBar = ({ activePage }: Props) => {
     const navigate = useNavigate();
 
     const onLogout = () => {
-        useAuthStore.getState().logOut();
-        useUserStore.getState().clearUser();
+        localStorage.removeItem("current_user");
         navigate('/login');
     }
 

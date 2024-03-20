@@ -81,7 +81,7 @@ const PieChart: React.FC<PieChartProps> = ({ data }) => {
             .enter()
             .append('g')
             .attr('class', 'legend')
-            .attr('transform', (d, i) => `translate(${i % numColumns * 140}, ${Math.floor(i / numColumns) * 40})`);
+            .attr('transform', (_, i) => `translate(${i % numColumns * 140}, ${Math.floor(i / numColumns) * 40})`);
 
         legends.append('rect')
             .attr('width', legendRectSize)

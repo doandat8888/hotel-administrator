@@ -24,6 +24,8 @@ const Login = () => {
         try {
             const user = consts.users.find((item) => item.email === email && item.password === password);
             if(user) {
+                console.log("User full name: ", user.full_name);
+                localStorage.setItem("current_user", user.full_name)
                 navigate('/');
             }else {
                 alert("Invalid username or password");

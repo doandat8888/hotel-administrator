@@ -145,18 +145,6 @@ const columns = [
     },
 ];
 
-const user = [
-    {
-        id: "1",
-        email: "staff@gmail.com",
-        password: "123456"
-    },
-    {
-        id: "2",
-        email: "staff1@gmail.com",
-        password: "123456"
-    },
-]
 
 const reservationsForecast = [
     {

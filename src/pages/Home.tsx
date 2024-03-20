@@ -1,15 +1,21 @@
-import { useNavigate } from 'react-router';
 import consts from '../consts/index';
-import { useLocation } from 'react-router'
+import { useLocation, useNavigate } from 'react-router'
 import SideBar from '../components/sidebar/SideBar';
 import UserAvatar from '../components/user/UserAvatar';
 import RevenueTable from '../components/revenue/RevenueTable';
+import { useEffect } from 'react';
 
 const Home = () => {
 
     const pathName = useLocation().pathname;
     const activePage = consts.menuList.find(menu => menu.path === pathName)?.id;
     const navigate = useNavigate();
+
+    useEffect(() => {
+        if(!localStorage.getItem("current_user")) {
+            navigate('/login')
+        }
+    }, [])
 
     return (
         <div className='flex bg-[#f3f8ff] h-[100vh]'>

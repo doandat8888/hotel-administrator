@@ -1,4 +1,4 @@
-import React, { ForwardRefExoticComponent, RefAttributes, SVGProps } from 'react'
+import { ForwardRefExoticComponent, RefAttributes, SVGProps } from 'react'
 import { useNavigate } from 'react-router';
 
 interface Props {

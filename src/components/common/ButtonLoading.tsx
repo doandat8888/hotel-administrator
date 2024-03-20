@@ -3,11 +3,11 @@ import { Button } from "@nextui-org/react";
 interface Props {
     content?: string,
     isLoading?: boolean
-    colorType?: string,
+    colorType?: "default" | "primary" | "secondary" | "success",
     onClickBtn?: () => void,
-    radius: string,
+    radius: "none" | "sm" | "md" | "lg" | "full" | undefined,
     disabled: boolean,
-    type?: string,
+    type?: "button" | "submit" | "reset" | undefined,
     width?: string,
     height?: string,
     px?: string,
