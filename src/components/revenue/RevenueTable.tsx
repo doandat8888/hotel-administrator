@@ -39,7 +39,7 @@ const RevenueTable = () => {
 
     const getTotalRow = (arr: any[]) => {
         const totalRow = {
-            id: 'total',
+            id: -1,
             property_id: 'Grand total',
             total_room: arr.reduce((acc, curr) => acc + curr.total_room, 0),
             room_revenue: arr.reduce((acc, curr) => acc + curr.room_revenue, 0),
@@ -49,6 +49,11 @@ const RevenueTable = () => {
         };
         return totalRow;
     }
+
+    const getPropertyName = (propertyId: number) => {
+        const property = consts.properties.find((prop) => prop.id === propertyId);
+        return property ? property.property_code : '';
+      };
 
     const columns = [
         {
@@ -104,7 +109,7 @@ const RevenueTable = () => {
                     <TableBody items={revenueList}>
                         {(item) => (
                             <TableRow key={item.id}>
-                                {(columnKey) => <TableCell>{getKeyValue(item, columnKey)}</TableCell>}
+                                {(columnKey) => columnKey === "property_id" && item.id !== -1 ? <TableCell>{getPropertyName(item.property_id)}</TableCell>  : <TableCell>{getKeyValue(item, columnKey)}</TableCell>}
                             </TableRow>
                         )}
                     </TableBody>
