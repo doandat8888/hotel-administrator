@@ -24,7 +24,7 @@ const SideBar = ({ activePage }: Props) => {
             </div>
             <div className="menu-list px-4 py-8">
                 {consts.menuList.map((item, index) =>
-                    <MenuItem path={item.path} isActive={activePage === index + 1} key={index} content={item.name} logo={item.logo} />
+                    <MenuItem path={item.path} isActive={activePage === index + 1} key={index} content={item.name} logo={item.logo}/>
                 )}
             </div>
             <div className="px-4 py-8 flex-grow items-end" onClick={onLogout}>
